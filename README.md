@@ -1,30 +1,30 @@
 # seventy-one
 
 A dual-drive, double-sided 1571 disk copier for the Commodore 64, written in
-[durexForth](https://github.com/durexforth/durexforth).
+[durexForth](https://github.com/jkotlinski/durexforth).
 
 ## Background
 
 The 1571 drive is well-supported on the C128, but double-sided copying on a
 stock C64 has historically been an underserved use case. Existing C64 disk
 utilities tend to support dual-drive 1541 or 1581 configurations, or treat the
-1571 as a single-sided 1541. `seventy-one` fills that gap.
+1571 as a single-sided 1541. The **seventy-one** tool fills that gap.
 
 ## Target Hardware
 
-The primary development target is the **Commodore 64 Ultimate (C64U)** with
-the following drive configuration:
+The primary development target is the [Commodore 64 Ultimate (C64U)](https://c64u.org/dokuwiki/)
+with the following drive configuration:
 
 | Device | Role                        | Format |
 |--------|-----------------------------|--------|
 | 8      | Boot drive (tool disk)      | d64    |
 | 9      | Source drive (virtual 1571) | d71    |
-| 11     | Destination (physical 1571) | —      |
+| 11     | Destination (physical 1571) | floppy |
 
-Drive numbers are configurable — this is just the author's preferred setup.
+The drive numbers are configurable. This is just the author's preferred setup.
 
 The physical 1571 is initialized in double-sided mode by sending `U0>M1` to its
-command channel at startup. Burst mode is not used, so the copier runs at
+command channel at startup. Burst mode is not used, so the copier runs at the
 standard IEC bus speed. It will be slower than a native C128 copy, but fully
 functional.
 
@@ -36,8 +36,10 @@ include seventy-one
 ```
 
 This copies all 70 tracks (35 per side) from device 9 to device 11, printing
-basic track/sector progress as it goes. No graphical interface; no
-copy-protection cracking — standard double-sided disks only.
+basic track/sector progress as it goes.  Note:
+- No graphical interface for now
+- No copy-protection cracks
+— standard double-sided disks only
 
 ## Project Structure
 
@@ -72,4 +74,4 @@ Early development. Core goals for the initial release:
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT: see [LICENSE](LICENSE).
