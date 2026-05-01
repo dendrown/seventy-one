@@ -51,7 +51,7 @@ seventy-one/
 │   ├── design.md
 │   └── 1571-dos-reference.md
 ├── src/
-│   ├── iec-util.fs     \ low-level IEC/drive helpers
+│   ├── iec-utils.fs    \ low-level IEC/drive helpers
 │   ├── drive71.fs      \ 1571 geometry & drive commands
 │   ├── ui.fs           \ track/sector progress display
 │   └── copy71.fs       \ top-level copy-71 word
