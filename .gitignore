@@ -1,2 +1,7 @@
+# C64/VICE files directory
+iec/[a-z,A-Z,0-9]*
+
+# Notes and swap files
 .*.swp
 NOTES.txt
+scratch/
