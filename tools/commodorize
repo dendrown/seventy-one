@@ -1,0 +1,10 @@
+#!/bin/bash
+
+INFILE=$1
+OUTFILE=${INFILE%.fs}
+
+sed '1s/^/\x01\xa0/' $INFILE | tr '\n' '\r'  |  tr '[:lower:]' '[:upper:]' > $OUTFILE
+echo "" >> $OUTFILE
+
+echo 'Translated: ' $INFILE '->' $OUTFILE
+
