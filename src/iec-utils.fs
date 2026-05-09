@@ -1,4 +1,5 @@
 \ iec-utils.fs  : low-level iec/drive helpers
+include dos
 
 variable src-drive
 variable dst-drive
